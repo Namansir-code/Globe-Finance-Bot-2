@@ -2,7 +2,9 @@ import json
 import os
 
 from rss_fetcher import get_rss_news
-from newsapi_fetcher import get_newsapi_news
+from rss_fetcher import get_rss_news
+from gemini_summarizer import summarize_news
+from telegram_sender import send_message
 from gemini_summarizer import summarize_news
 from telegram_sender import send_message
 
@@ -31,7 +33,7 @@ def run():
     news = []
 
     news.extend(get_rss_news())
-    news.extend(get_newsapi_news())
+    news.extend(get_rss_news())
 
     for item in news:
 
